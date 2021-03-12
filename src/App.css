@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(39, 174, 96);
+  transition-property: background-color;
+  transition-duration: 4s;
+  position: relative;
+  z-index: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.quotes-content {
+  width: 500px;
+  position: relative;
+  z-index: 5;
+  background: white;
+  padding: 40px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quote-box {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  color: rgb(39, 174, 96);
+  transition-property: color;
+  transition-duration: 4s;
+}
+
+.btn {
+  transition-property: background-color;
+  transition-duration: 4s;
+  padding: 10px;
+  background: rgb(39, 174, 96);
   color: white;
+  border-radius: 3px;
 }
-
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  opacity: 0.9;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn:active {
+  border-style: none;
+  outline: none;
+}
+.btn:focus {
+  outline: none;
+}
+.random-button {
+  width: 450px;
+  display: flex;
+  justify-content: flex-end;
+}
+.quote-author {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.text {
+  font-family: "Releway";
+  font-size: 28px;
+}
+.author {
+  font-family: "Releway";
+  font-size: 16px;
 }
