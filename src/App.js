@@ -7,6 +7,7 @@ const App = (props) => {
   const [quote, setEditQuote] = useState(
     "To hell with feeling sorry for yourself, less useless reflections and more reflexes. When a clear goal is set, empty wanderings become a quest."
   );
+  const [getedData, setGetedData] = useState(false)
   const [quotes, setEditQuotes] = useState([]);
   const [styles, setStylesQuotes] = useState("");
 
@@ -25,13 +26,15 @@ const App = (props) => {
   useEffect(() => {
    async function asyncData() { 
     let data = await quotesAPI.getQuotes();
-    setEditQuotes(data.quotes); 
+    setEditQuotes(data.quotes);
+    setGetedData(true) 
   }
   asyncData()
-  }, [quote,author]);
+  }, []);
 
   return (
-    <div className="container" style={{backgroundColor: styles}}>
+    <body style={{backgroundColor:styles}}>
+      <div className="container" style={{backgroundColor: styles}}>
       <div className="quotes-content">
         <div className="quote-box">
           <div className="quote-text">
@@ -47,15 +50,20 @@ const App = (props) => {
           <div className="random-button">
             <button
               onClick={quotesC}
+              disabled={!getedData}
               className="btn"
               style={{ backgroundColor: styles }}
             >
               New quotes
             </button>
+
+            
           </div>
         </div>
       </div>
     </div>
+    </body>
+    
   );
 };
 
